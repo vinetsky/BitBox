@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Coherent Gameface test</title>
   <link rel="stylesheet" href="/dist/css/styles.css">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
 </head>
 <div class="page">
   <div class="header">
@@ -22,43 +23,65 @@
     <div class="content__wrapper">
       <div class="grid">
         <div class="grid__col">
-          <div class="card card_selected">
+          <div class="card">
             <div class="card__icon card__icon_defender"></div>
             <div class="card__icon card__icon_highlight"></div>
             <div class="card__header">Defender</div>
             <div class="card__description">Cover for shooters and engineers, flank control.</div>
             <div class="card__image card__image_defender"></div>
+            <div class="card__label"></div>
           </div>
         </div>
         <div class="grid__col">
           <div class="card">
-            <div class="card__icon card__icon_shooter"></div>
+            <div class="card__icon card__icon_defender"></div>
             <div class="card__icon card__icon_highlight"></div>
             <div class="card__header">Shooter</div>
             <div class="card__description">Medium range, area fire shooter.</div>
-            <div class="card__image card__image_shooter"></div>
+            <div class="card__image card__image_defender"></div>
+            <div class="card__label"></div>
           </div>
         </div>
         <div class="grid__col">
           <div class="card">
-            <div class="card__icon card__icon_sniper"></div>
+            <div class="card__icon card__icon_defender"></div>
             <div class="card__icon card__icon_highlight"></div>
             <div class="card__header">Sniper</div>
             <div class="card__description">Anti shoota, anti sniper.</div>
-            <div class="card__image card__image_sniper"></div>
+            <div class="card__image card__image_defender"></div>
+            <div class="card__label"></div>
           </div>
         </div>
         <div class="grid__col">
           <div class="card">
-            <div class="card__icon card__icon_killer"></div>
+            <div class="card__icon card__icon_defender"></div>
             <div class="card__icon card__icon_highlight"></div>
             <div class="card__header">Killer</div>
             <div class="card__description">Very mobile unit in hunt for loners.</div>
-            <div class="card__image card__image_killer"></div>
+            <div class="card__image card__image_defender"></div>
+            <div class="card__label"></div>
           </div>
         </div>
       </div>
     </div>
-    <button class="button button_spaced">Play</button>
+    <button class="bttn bttn_play content__bttn" data-toggle="modal">Play</button>
   </div>
 </div>
+<div class="modal">
+  <div class="modal__wrapper">
+    <div class="modal__close"></div>
+    <div class="separator">
+      <div class="separator__left"></div>
+      <div class="separator__mid"></div>
+      <div class="separator__right"></div>
+    </div>
+    <div class="modal__shield">
+      <div class="modal__message">I have a tiny question to you. <br>                Are you sure about that?</div>
+      <div class="modal__button-group">
+        <button class="bttn bttn_simple">No</button>
+        <button class="bttn bttn_simple">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/dist/js/card-select.js"></script>

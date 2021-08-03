@@ -12,6 +12,7 @@ head
   meta(http-equiv='X-UA-Compatible' content='ie=edge')
   title Coherent Gameface test
   link(rel='stylesheet' href='/dist/css/styles.css')
+  link(rel='icon' type='image/png' href='/img/favicon.png')
 .page
   .header
     .header__menu-button
@@ -24,35 +25,30 @@ head
   .content
     .content__wrapper
       .grid
-        .grid__col
-          .card.card_selected
-            .card__icon.card__icon_defender
-            .card__icon.card__icon_highlight
-            .card__header Defender
-            .card__description
-              | Cover for shooters and engineers, flank control.
-            .card__image.card__image_defender
-        .grid__col
-          .card
-            .card__icon.card__icon_shooter
-            .card__icon.card__icon_highlight
-            .card__header Shooter
-            .card__description
-              | Medium range, area fire shooter.
-            .card__image.card__image_shooter
-        .grid__col
-          .card
-            .card__icon.card__icon_sniper
-            .card__icon.card__icon_highlight
-            .card__header Sniper
-            .card__description Anti shoota, anti sniper.
-            .card__image.card__image_sniper
-        .grid__col
-          .card
-            .card__icon.card__icon_killer
-            .card__icon.card__icon_highlight
-            .card__header Killer
-            .card__description
-              | Very mobile unit in hunt for loners.
-            .card__image.card__image_killer
-    button.button.button_spaced Play
+        each card in cards
+          .grid__col
+            .card
+              .card__icon.card__icon_defender
+              .card__icon.card__icon_highlight
+              .card__header #{card.role}
+              .card__description
+                | #{card.description}
+              .card__image.card__image_defender
+              .card__label
+    button.bttn.bttn_play.content__bttn(data-toggle='modal') Play
+.modal
+  .modal__wrapper
+    .modal__close
+    .separator
+      .separator__left
+      .separator__mid
+      .separator__right
+    .modal__shield
+      .modal__message
+        | I have a tiny question to you. 
+        br
+        |                 Are you sure about that?
+      .modal__button-group
+        button.bttn.bttn_simple No
+        button.bttn.bttn_simple Yes
+script(src='/dist/js/card-select.js')

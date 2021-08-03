@@ -5,10 +5,19 @@
   align-items: center
   width: 100%
   padding-top: calc(52 * #{$vpy})
+  cursor: pointer
   background:
     image: url("#{$images-path}card-bg.png")
     repeat: no-repeat
     position: top center
+  &:hover
+    background:
+      image: url("#{$images-path}card-bg-hover.png")
+      repeat: no-repeat
+      position: top center
+  &_selected
+    transform: translateY(calc(-20 * #{$vpy}))
+    background-image: url("#{$images-path}card-bg-hover.png")
 
 .card__icon
   position: relative
@@ -55,6 +64,22 @@
     style: italic
     weight: 300
     size: calc(21 * #{$vpx})
+
+.card__label
+  position: absolute
+  bottom: 0
+  right: 0
+  z-index: 15
+  opacity: 0
+  width: calc(189 * #{$vpx})
+  height: calc(176 * #{$vpx})
+  transform: translate(20%, 20%)
+  background:
+    image: url("#{$images-path}check.png")
+    size: contain
+    repeat: no-repeat
+  .card.card_selected &
+    opacity: 1
 
 .card__image
   width: calc(300 * #{$vpx})

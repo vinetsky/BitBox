@@ -12,6 +12,9 @@ html, body
   color: $color-white
   display: flex
   flex-direction: column
+  &_diffuse
+    filter: blur(4px)
+
 
 .header
   display: flex
@@ -91,17 +94,82 @@ html, body
       left: calc(25 * #{$vpx})
       right: calc(25 * #{$vpx})
 
+.modal
+  display: none
+  position: absolute
+  z-index: 20
+  top: 0
+  justify-content: center
+  align-items: center
+  width: 100vw
+  height: 100vh
+  background-color: rgba(0, 0, 0, 0.8)
+
+  &#{&}_show
+    display: flex
+
+  &__wrapper
+    display: flex
+    flex-direction: column
+    width: calc(470 * #{$vpx})
+    height: calc(230 * #{$vpx})
+
+  &__close
+    align-self: flex-end
+    width: calc(44 * #{$vpx})
+    height: calc(35 * #{$vpx})
+    background:
+      image: url("#{$images-path}icon-close.png")
+      size: contain
+      repeat: no-repeat
+
+  &__shield
+    align-self: center
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    width: calc(420 * #{$vpx})
+    height: calc(210 * #{$vpx})
+    box-sizing: border-box
+    padding: calc(40 * #{$vpx}) calc(40 * #{$vpx}) calc(20 * #{$vpx})
+    background-image: url("#{$images-path}modal-bg.png")
+    background-size: cover
+
+  &__message
+    font:
+      family: $font-royal
+      size: calc(18 * #{$vpx})
+    text-align: center
+    color: $color-white
+
+  &__button-group
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    .bttn
+      flex: 0 0 48%
+
+
 .bttn
-  width: calc(330 * #{$vpy})
-  height: calc(135 * #{$vpy})
-  top: #{$vpx}
-  bottom: #{$vpy}
   background-color: transparent
   border: none
-  background-image: url("#{$images-path}bttn_default.png")
-  background-size: contain
-  font:
-    size: calc(52 * #{$vpy})
-    family: $font-royal
-  &:hover
-    background-image: url("#{$images-path}bttn_hover.png")
+  &_play
+    width: calc(330 * #{$vpy})
+    height: calc(135 * #{$vpy})
+    background-image: url("#{$images-path}bttn_default.png")
+    background-size: contain
+    font:
+      size: calc(52 * #{$vpy})
+      family: $font-royal
+    &:hover
+      background-image: url("#{$images-path}bttn_hover.png")
+  &_simple
+    color: $color-white
+    font:
+      size: calc(36 * #{$vpy})
+      family: $font-royal
+
+
+
+
