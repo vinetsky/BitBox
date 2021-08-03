@@ -1,0 +1,58 @@
+doctype html
+-
+  var cards = [
+    {id: "Defender", role: "Defender", description : "Cover for shooters and engineers, flank control."},
+    {id: "Shooter", role: "Shooter", description : "Medium range, area fire shooter."},
+    {id: "Sniper", role: "Sniper", description : "Anti shoota, anti sniper."},
+    {id: "Killer", role: "Killer", description : "Very mobile unit in hunt for loners."}
+  ]
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Coherent Gameface test
+  link(rel='stylesheet' href='/dist/css/styles.css')
+.page
+  .header
+    .header__menu-button
+    .header__title
+      h1.header__h1 Choose the Class
+      .separator
+        .separator__left
+        .separator__mid
+        .separator__right
+  .content
+    .content__wrapper
+      .grid
+        .grid__col
+          .card.card_selected
+            .card__icon.card__icon_defender
+            .card__icon.card__icon_highlight
+            .card__header Defender
+            .card__description
+              | Cover for shooters and engineers, flank control.
+            .card__image.card__image_defender
+        .grid__col
+          .card
+            .card__icon.card__icon_shooter
+            .card__icon.card__icon_highlight
+            .card__header Shooter
+            .card__description
+              | Medium range, area fire shooter.
+            .card__image.card__image_shooter
+        .grid__col
+          .card
+            .card__icon.card__icon_sniper
+            .card__icon.card__icon_highlight
+            .card__header Sniper
+            .card__description Anti shoota, anti sniper.
+            .card__image.card__image_sniper
+        .grid__col
+          .card
+            .card__icon.card__icon_killer
+            .card__icon.card__icon_highlight
+            .card__header Killer
+            .card__description
+              | Very mobile unit in hunt for loners.
+            .card__image.card__image_killer
+    button.button.button_spaced Play

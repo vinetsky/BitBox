@@ -1,0 +1,68 @@
+.card
+  display: flex
+  position: relative;
+  flex-direction: column
+  align-items: center
+  width: 100%
+  padding-top: calc(52 * #{$vpy})
+  background:
+    image: url("#{$images-path}card-bg.png")
+    repeat: no-repeat
+    position: top center
+
+.card__icon
+  position: relative
+  width: calc(72 * #{$vpy})
+  height: calc(72 * #{$vpy})
+  margin: calc(10 * #{$vpy})
+  background:
+    repeat: no-repeat
+    position: center
+    size: contain
+  @each $role in defender, shooter, sniper, killer
+    &_#{$role}
+      background-image: url("#{$images-path}icon-shield-#{$role}.png")
+      z-index: 10
+  &_highlight
+    position: absolute
+    top: calc(52 * #{$vpy})
+
+    .card.card_selected &
+      background-image: url("#{$images-path}icon-shield-highlight.png")
+
+.card__header
+  display: flex
+  align-items: center
+  justify-content: center
+  font-family: $font-royal
+  font-size: calc(36 * #{$vpx})
+  height: calc(40 * #{$vpy})
+  color: $color-white
+  text-transform: uppercase
+
+.card__description
+  display: flex
+  align-items: flex-start
+  text-align: center
+  height: calc(60 * #{$vpy})
+  color: $color-white-fade
+  padding:
+    right: calc(30 * #{$vpx})
+    left: calc(30 * #{$vpx})
+    top: calc(10 * #{$vpy})
+  font:
+    family: $font-roboto
+    style: italic
+    weight: 300
+    size: calc(21 * #{$vpx})
+
+.card__image
+  width: calc(300 * #{$vpx})
+  height: calc(350 * #{$vpx})
+  background:
+    repeat: no-repeat
+    position: top center
+    size: contain
+  @each $role in defender, shooter, sniper, killer
+    &_#{$role}
+      background-image: url("#{$images-path}avatar-#{$role}.png")

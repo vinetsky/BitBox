@@ -1,0 +1,107 @@
+html, body
+  margin: 0
+  padding: 0
+
+.page
+  background:
+    image: url("#{$images-path}background-main.jpg")
+    size: cover
+    position: center
+  width: 100vw
+  height: 100vh
+  color: $color-white
+  display: flex
+  flex-direction: column
+
+.header
+  display: flex
+  flex-direction: row
+  align-items: flex-end
+  height: calc(70 * #{$vpy})
+  padding:
+    left: calc(30 * #{$vpx})
+    right: calc(30 * #{$vpx})
+  font-size: calc(24 * #{$vpy})
+
+  &__menu-button
+    width: 52px
+    height: 52px
+    box-sizing: content-box
+    padding-right: 24px
+    cursor: pointer
+    background:
+      image: url("#{$images-path}header__menu-button.png")
+      repeat: no-repeat
+      position: left bottom
+
+  &__title
+    display: flex
+    flex-grow: 1
+    height: 100%
+    flex-direction: column
+    justify-content: flex-end
+    align-items: stretch
+
+  &__h1
+    display: flex
+    font-size: 1em
+    font-family: $font-royal
+    letter-spacing: calc(50 * #{$vpx})
+    align-items: center
+    justify-content: center
+    margin: 0
+    flex-grow: 1
+
+.separator
+  display: flex
+  height: 8px
+  width: 100%
+
+  &__mid
+    flex-grow: 1
+    background:
+      image: url("#{$images-path}separator-mid.jpg")
+      repeat: repeat-x
+      position: left center
+
+  @each $side in left, right
+    &__#{$side}
+      flex: 0 0 8px
+      width: 8px
+      height: 8px
+      background-image: url("#{$images-path}separator-#{$side}.png")
+
+.content
+  display: flex
+  flex-grow: 1
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  &__bttn
+    margin-top: calc(70 * #{$vpy})
+
+.grid
+  display: flex
+  flex-direction: row
+  justify-content: center
+  .grid__col
+    box-sizing: content-box
+    width: calc(320 * #{$vpx})
+    padding:
+      left: calc(25 * #{$vpx})
+      right: calc(25 * #{$vpx})
+
+.bttn
+  width: calc(330 * #{$vpy})
+  height: calc(135 * #{$vpy})
+  top: #{$vpx}
+  bottom: #{$vpy}
+  background-color: transparent
+  border: none
+  background-image: url("#{$images-path}bttn_default.png")
+  background-size: contain
+  font:
+    size: calc(52 * #{$vpy})
+    family: $font-royal
+  &:hover
+    background-image: url("#{$images-path}bttn_hover.png")
